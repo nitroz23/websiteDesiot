@@ -1,0 +1,126 @@
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+/* App background wrapper */
+.app {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 2rem;
+}
+
+/* subtle dark overlay for contrast */
+.app::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 0;
+}
+
+/* ensure content sits above overlay */
+.app > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Sensor cards - stacked rows layout: row with two cards + wide card below */
+.sensors {
+  display: flex;
+  flex-direction: column; /* stack rows vertically */
+  gap: 0.75rem;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.sensor-row {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.sensor-card {
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.08);
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.04);
+  flex: 1 1 300px; /* flexible but with a sensible min width */
+  text-align: center;
+}
+
+.sensor-card h2 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.sensor-value {
+  font-size: 1.6rem;
+  color: #111;
+  font-weight: 600;
+}
+
+@media (max-width: 600px) {
+  .sensors {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+}
+
+.sensor-card.normal {
+  max-width: 360px; /* original width */
+}
+
+.sensor-card.wide {
+  max-width: 720px; /* double width */
+  width: 100%; /* take entire width of the .sensors container */
+  flex: 0 0 auto;
+}
