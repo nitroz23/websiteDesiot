@@ -60,6 +60,9 @@ function App() {
             unit=""
           />
         </div>
+        <div className="sensor-row">
+          <SensorCard title="Weather" value="Sunny Day" unit="" size="wide"/>
+        </div>
       </section>
     </div>
   );
